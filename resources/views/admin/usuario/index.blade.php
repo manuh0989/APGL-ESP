@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-@card
+
+@cardIcons($icons)
 	@slot('header', trans('idioma.admin.usuarios.vista.header'))
 	<table id="tblUsuarios" class="table table-striped table-bordered table-sm" style="width:100%">
         <thead>
@@ -17,6 +18,7 @@
 				<tr id="tr{{ $usuario->idUsuario  }}">
 					<td>{{ $key+1 }}</td>
 					<td>{{ $usuario->nombreCompleto }}</td>
+					<td>{{ $usuario->DNI }}</td>
 					<td>{{ $usuario->username }}</td>
 					<td>{{ $usuario->email }}</td>
 					<td>{{ $usuario->created_at }}</td>
@@ -71,7 +73,8 @@
             </tr>
         </tfoot>
     </table>
-@endcard
+    {{ $usuarios->links() }}
+@endcardIcons
 
 <form action="{{ route('admin.usuario.papelera',':usuario') }}"  id="frmPapeleraUsuario">
 	@csrf @method('PATCH')

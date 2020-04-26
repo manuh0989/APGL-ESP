@@ -20,9 +20,10 @@ use Illuminate\Support\Str;
 $factory->define(User::class, function (Faker $faker) {
 	$rands=rand(0,1);
     return [
-		'nombre'             => $faker->name
+		'nombre'             =>$faker->name
 		,'apellidoPaterno'   =>$faker->firstName
 		,'apellidoMaterno'   =>$faker->lastName
+		,'DNI'               =>Str::random()
 		,'username'          =>$faker->username
 		,'email'             => $faker->unique()->safeEmail
 		,'email_verified_at' => now()

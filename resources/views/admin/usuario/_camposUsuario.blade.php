@@ -34,10 +34,23 @@
 	@enderror
 </div>
 
+<div class="form-group">
+	<label for="DNI">
+		{{ trans('idioma.admin.usuarios.registro.DNI') }}
+	</label>
+	<input type="text" class="form-control  @error('DNI') is-invalid @enderror" name="DNI" id="DNI" 
+		value="{{ old('DNI',$user->DNI) }}">
+	@error('DNI')
+		<span class="invalid-feedback" role="alert">
+			<strong>{{ $message }}</strong>
+		</span>
+	@enderror
+</div>
+
 <div class="form-row">
 	<div class="form-group col-md-6">
 		<label for="username">
-		{{ trans('idioma.admin.usuarios.registro.username') }}
+			{{ trans('idioma.admin.usuarios.registro.username') }}
 		</label>
 		<input type="text" class="form-control  @error('username') is-invalid @enderror" name="username" id="username" 
 		value="{{ old('username',$user->username) }}">
@@ -49,7 +62,7 @@
 	</div>
 	<div class="form group col-md-6">
 		<label for="email">
-		{{ trans('idioma.admin.usuarios.registro.email') }}
+			{{ trans('idioma.admin.usuarios.registro.email') }}
 		</label>
 		<input type="text" class="form-control  @error('email') is-invalid @enderror" name="email" id="email" 
 		value="{{ old('email',$user->email) }}">

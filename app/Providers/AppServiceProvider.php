@@ -23,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(){
         Blade::component('compartidos._card', 'card');
+        Blade::component('compartidos._cardIcons', 'cardIcons');
     }
 }

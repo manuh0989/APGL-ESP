@@ -30,6 +30,11 @@ class ActualizarRequest extends FormRequest
             ,'username'        =>['required'
                                     ,Rule::unique('usuarios')->ignore($this->user,'idUsuario')
                                 ]
+            ,'DNI'        =>[
+                                'required'
+                                ,Rule::unique('usuarios')->ignore($this->user,'idUsuario')
+                                ,'min:8'
+                                ]
             ,'email'           =>['required'
                                     ,'email'
                                     ,'max:255'
@@ -44,6 +49,7 @@ class ActualizarRequest extends FormRequest
                 'nombre'           =>$this->nombre
                 ,'apellidoPaterno' =>$this->apellidoPaterno
                 ,'apellidoMaterno' =>$this->apellidoMaterno
+                ,'DNI'             =>$this->DNI
                 ,'username'        =>$this->username
                 ,'email'           =>$this->email
             ]);

@@ -2,14 +2,14 @@ $( document ).ready(function() {
 	$('#lnkLogout').click(function(event) {
 		$('#frmLogout').submit();
 	});
-	$('#tblUsuarios').DataTable({
+	/*$('#tblUsuarios').DataTable({
 		info:false
 			,"stateSave": true
-			,"paging":true
+			,"paging":false
 			,"language": {
 				"url": "../js/dataTable/len-es.json",
 			}
-	});
+	});*/
 
 	$('.btnRestore').click(function(event){
 		

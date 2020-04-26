@@ -14,20 +14,14 @@ class UserController extends Controller
     ];
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 
+     * @return \Illuminate\Http\Response  
+     * @param los paraemtros a la vista se envian desde el provider ViewServiceProvider admin.usuario.indexs
      */
-    public function index()
-    {
-        $usuarios=User::withTrashed()
-        ->whereNotIn('idUsuario',[auth()->user()->idUsuario])
-        ->get();
-        $encabezados=trans('idioma.admin.usuarios.vista.headerTable');
-        return view('admin.usuario.index'
-            ,compact('encabezados','usuarios')
-        );
+    public function index(){
+        return view('admin.usuario.index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -89,9 +83,7 @@ class UserController extends Controller
     {
         $request->actualziarUsuario($user);
 
-        return redirect()
-        ->route('admin.usuario.index')
-        ->with('message',trans('idioma.message.usuario.actualizar.ok'));
+        return back()->with('message',trans('idioma.message.usuario.actualizar.ok'));
     }
 
     /**

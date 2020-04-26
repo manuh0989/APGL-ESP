@@ -30,6 +30,7 @@ class RegistroRequest extends FormRequest
             'nombre'           =>['required','string','max:255']
             ,'apellidoPaterno' =>['required','string','max:255']
             ,'apellidoMaterno' =>['required','string','max:255']
+            ,'DNI'             =>['required','string','min:8','max:255','unique:usuarios,DNI']
             ,'username'        =>['required','unique:usuarios,username']
             ,'email'           =>['required','email','max:255','unique:usuarios,email']
             ,'password'        =>['required','min:8','confirmed']
@@ -42,6 +43,7 @@ class RegistroRequest extends FormRequest
                 'nombre'           =>$this->nombre
                 ,'apellidoPaterno' =>$this->apellidoPaterno
                 ,'apellidoMaterno' =>$this->apellidoMaterno
+                ,'DNI'             =>$this->DNI
                 ,'username'        =>$this->username
                 ,'email'           =>$this->email
                 ,'password'        =>Hash::make($this->password),

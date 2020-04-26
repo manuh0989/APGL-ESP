@@ -42,7 +42,7 @@
                         </div>
                     </h6>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('admin.index') }}">
+                    <a class="dropdown-item" href="{{ route('index') }}">
                         <div class="dropdown-item-icon">
                             <i data-feather="settings"></i>
                         </div>

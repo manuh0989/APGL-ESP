@@ -12,12 +12,13 @@ class UsuariosSeeder extends Seeder
     public function run()
     {
         User::create([
-			'nombre'          =>'Ignacio Manuel'
-			,'apellidoPaterno' =>'Sánchez'
-			,'apellidoMaterno' =>'Neri'
-			,'username'        =>'manuh0989'
-			,'email'           =>'manuh0989@gmail.com'
-			,'password'        =>Hash::make('0989nacho')
+            'nombre'           =>'Ignacio Manuel'
+            ,'apellidoPaterno' =>'Sánchez'
+            ,'apellidoMaterno' =>'Neri'
+            ,'DNI'             =>'SANI8909HDF11'
+            ,'username'        =>'manuh0989'
+            ,'email'           =>'manuh0989@gmail.com'
+            ,'password'        =>Hash::make('0989nacho')
         ]);
 
         factory(User::class,40)->create();

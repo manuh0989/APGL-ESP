@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/admin';
+    public const HOME = '/';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -45,6 +45,14 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+
+        $this->mapAdminUsuarioRoutes();
+        
+        $this->mapAdminProveedorRoutes();
+
+        $this->mapAdminCategoriaRoutes();
+
+        $this->mapAdminClienteRoutes();
 
         //
     }
@@ -77,4 +85,33 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+
+    protected function mapAdminUsuarioRoutes(){
+        Route::middleware(['web', 'auth','verified'])
+            ->namespace($this->namespace)
+            ->prefix('/admin/usuario')
+            ->group(base_path('routes/admin/usuario.php'));
+    }
+
+    protected function mapAdminProveedorRoutes(){
+        Route::middleware(['web', 'auth','verified'])
+            ->namespace($this->namespace)
+            ->prefix('/admin/proveedor')
+            ->group(base_path('routes/admin/proveedor.php'));
+    }
+
+     protected function mapAdminCategoriaRoutes(){
+        Route::middleware(['web', 'auth','verified'])
+            ->namespace($this->namespace)
+            ->prefix('/admin/categoria')
+            ->group(base_path('routes/admin/categoria.php'));
+    }
+
+    protected function mapAdminClienteRoutes(){
+        Route::middleware(['web', 'auth','verified'])
+            ->namespace($this->namespace)
+            ->prefix('/admin/cliente')
+            ->group(base_path('routes/admin/cliente.php'));
+    }
+         
 }

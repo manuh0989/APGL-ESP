@@ -21,9 +21,24 @@ return [
 		]
 	]
 	,'menu'=>[
-		'usuarios'=>'Usuarios'
-		,'verTodos'=>'Ver todos'
-		,'registro'   =>'Registrar usuario'
+		'usuarios'=>[
+			'usuarios'=>'Usuarios'
+			,'verTodos'=>'Ver todos'
+			,'registro'   =>'Registrar usuario'
+		]
+		,'proveedores'=>[
+			'proveedores'=>'Proveedores'
+			,'verTodos'=>'Ver todos'
+		]
+		,'categorias'=>[
+			'categorias'=>'Categorias'
+			,'verTodos'=>'Ver todos'
+		]
+		,'clientes'=>[
+			'clientes'=>'Clientes'
+			,'verTodos'=>'Ver todos'
+		]
+		
 	]
 	,'login'=>[
 		'login'              =>'Inicio de sesión'
@@ -36,7 +51,7 @@ return [
 		,'recuperarPassword' =>'Recuperar contraseña'
 		,'sendPassword'      =>'Enviar correo'
 		,'resetPassword'     =>'Reinicar contraseña'
-		,'verifyemail'		 =>'Verifica tu correo electronico'
+		,'verifyemail'		 =>'Verifica tu correo electrónico'
 	]
 	,'admin'=>[
 		'usuarios'=>[
@@ -45,13 +60,14 @@ return [
 				,'activo'       =>'Activo'
 				,'bajaTemporal' =>'Baja'
 				,'headerTable'=>[
-					'id'            =>'#'
-					,'nombre'       =>'Nombre'
-					,'username'     =>'Usuario'
-					,'email'        =>'Correo'
-					,'created_at'   =>'Fecha registro'
-					,'status'       =>'Status'
-					,'actions'      =>'Acciones'
+					'id'          =>'#'
+					,'nombre'     =>'Nombre'
+					,'DNI'        =>'DNI'
+					,'username'   =>'Usuario'
+					,'email'      =>'Correo'
+					,'created_at' =>'Fecha registro'
+					,'status'     =>'Status'
+					,'actions'    =>'Acciones'
 					]
 			]
 			,'registro'=>[
@@ -66,6 +82,7 @@ return [
 				,'rememberToken'   =>'Recordar contraseña:'
 				,'btnGuardar'      =>'Guardar'
 				,'btnEditar'       =>'Editar'
+				,'DNI'             =>'DNI'
 			]
 		]
 	]
